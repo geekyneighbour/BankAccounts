@@ -10,10 +10,11 @@
 7. Заглушка принимает на вход запросы в указанном порядке (на http://localhost:8080/accounts):
 
   1) POST-запрос (возможно только три корректных запроса (данные юзеров в заглушке):
-     curl -H "Content-Type: application/json" -d "{\"login\":\"ivanov\",\"password\":\"12345\"}" http://localhost:8080/accounts
-     curl -H "Content-Type: application/json" -d "{\"login\":\"safonova\",\"password\":\"666\"}" http://localhost:8080/accounts
-     curl -H "Content-Type: application/json" -d "{\"login\":\"petrov\",\"password\":\"privet\"}" http://localhost:8080/accounts
-  2) GET-запрос, который выдает данные аккаунта, если POST-запрос был направлен с корректными данными. Если же первый запрос был направлен с некорректными данными, то от сервера придет ошибка.
+
+     curl -H "Content-Type: application/json" -d "{\\"login\\":\\"ivanov\\",\\"password\\":\\"12345\\"}" http://localhost:8080/accounts 
+     curl -H "Content-Type: application/json" -d "{\\"login\\":\\"safonova\\",\"password\\":\\"666\\"}" http://localhost:8080/accounts
+     curl -H "Content-Type: application/json" -d "{\\"login\\":\\"petrov\\",\\"password\\":\\"privet\\"}" http://localhost:8080/accounts
+  3) GET-запрос, который выдает данные аккаунта, если POST-запрос был направлен с корректными данными. Если же первый запрос был направлен с некорректными данными, то от сервера придет ошибка.
       curl http://localhost:8080/accounts
 
      Пример ответа, если запрос был направлен с корректными данными:
